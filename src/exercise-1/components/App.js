@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import '../styles/App.css';
-import {BrowserRouter as Router, NavLink, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router,Redirect, NavLink, Switch, Route} from 'react-router-dom';
 import Home from './Home'
 import About from './About'
 import Profile from './Profile'
 import Products from './Products'
+
 class App extends Component {
   render() {
     return (
@@ -22,7 +23,10 @@ class App extends Component {
           <Route path="/products"  component={Products} />
           <Route exact path="/about-us" component={About} />
           <Route exact path="/" component={Home} />
+          <Redirect from="/goods" to="/products" />
+          <Redirect to="/" />
         </Switch>
+          
         </main>
         </Router>
       </div>
