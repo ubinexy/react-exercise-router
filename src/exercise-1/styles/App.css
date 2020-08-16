@@ -1,0 +1,38 @@
+.app {
+    width: 800px;
+    margin: 10px auto;
+}
+
+header {
+    text-align: right;
+    height: 30px;
+    background-color: rgb(204,204,204);
+    border: solid 1px grey;
+}
+
+nav {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 20px;
+    text-decoration: none;
+    line-height: 30px;
+}
+
+main {
+    padding: 20px;
+    border: solid 1px grey;
+    height: 300px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+main a {
+    text-decoration: underline;
+    color: red;
+}
+a.active {
+    text-decoration: underline;    
+}

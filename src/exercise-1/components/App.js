@@ -1,12 +1,28 @@
 import React, {Component} from 'react';
 import '../styles/App.css';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router, NavLink, Switch, Route} from 'react-router-dom';
+import Home from './Home'
+import About from './About'
+import Profile from './Profile'
 
 class App extends Component {
   render() {
     return (
       <div className="app">
-        <Router />
+        <Router>
+        <header>
+          <nav><NavLink to="/" exact activeClassName="active">Home</NavLink></nav>
+          <nav><NavLink to="/my-profile" activeClassName="active">My Profile</NavLink></nav>
+          <nav><NavLink to="/about-us" activeClassName="active">About us</NavLink></nav>
+        </header>
+        <main>
+        <Switch>
+          <Route exact path="/my-profile" component={Profile} />
+          <Route exact path="/about-us" component={About} />
+          <Route exact path="/" component={Home} />
+        </Switch>
+        </main>
+        </Router>
       </div>
     );
   }
