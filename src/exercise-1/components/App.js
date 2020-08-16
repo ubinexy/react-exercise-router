@@ -4,7 +4,7 @@ import {BrowserRouter as Router, NavLink, Switch, Route} from 'react-router-dom'
 import Home from './Home'
 import About from './About'
 import Profile from './Profile'
-
+import Products from './Products'
 class App extends Component {
   render() {
     return (
@@ -12,12 +12,14 @@ class App extends Component {
         <Router>
         <header>
           <nav><NavLink to="/" exact activeClassName="active">Home</NavLink></nav>
+          <nav><NavLink to="/products" activeClassName="active">Products</NavLink></nav>
           <nav><NavLink to="/my-profile" activeClassName="active">My Profile</NavLink></nav>
           <nav><NavLink to="/about-us" activeClassName="active">About us</NavLink></nav>
         </header>
         <main>
         <Switch>
           <Route exact path="/my-profile" component={Profile} />
+          <Route path="/products"  component={Products} />
           <Route exact path="/about-us" component={About} />
           <Route exact path="/" component={Home} />
         </Switch>
